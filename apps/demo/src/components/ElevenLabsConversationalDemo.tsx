@@ -193,6 +193,11 @@ export const ElevenLabsConversationalDemo: React.FC<
       // Respuesta del agente (texto)
       console.log("[Demo] Agente respondió:", text);
       setAgentResponse(text);
+
+      // FIX: Reset interrupt debounce para evitar descartar chunks del nuevo audio
+      // ElevenLabs puede responder muy rápido (<300ms), causando que los primeros
+      // chunks del NUEVO audio se descarten como "ghost chunks"
+      audioHandlerRef.current?.resetDebounce();
     },
 
     onConnectionEstablished: (convId) => {

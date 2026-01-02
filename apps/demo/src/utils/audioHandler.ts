@@ -128,6 +128,18 @@ export class AudioHandler {
   }
 
   /**
+   * Resetea el debounce de interrupción
+   * Se llama cuando ElevenLabs confirma una nueva respuesta (onAgentResponse)
+   * para evitar descartar chunks legítimos del nuevo audio
+   */
+  public resetDebounce(): void {
+    console.log(
+      "[AudioHandler] Reset interrupt debounce - nuevo audio es legítimo",
+    );
+    this.lastInterruptTime = 0;
+  }
+
+  /**
    * Resetea el handler (para nueva conversación)
    */
   public reset(): void {
