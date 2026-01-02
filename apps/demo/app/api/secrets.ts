@@ -11,3 +11,6 @@ export const LANGUAGE = "en";
 // CUSTOM MODE Customizations
 export const ELEVENLABS_API_KEY = "YOUR_ELEVENLABS_API_KEY";
 export const OPENAI_API_KEY = "YOUR_OPENAI_API_KEY";
+
+// CONVERSATIONAL MODE Customizations
+export const ELEVENLABS_AGENT_ID = "YOUR_AGENT_ID_HERE";
